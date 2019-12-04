@@ -2,22 +2,23 @@
 #define RADIXTREE_H
 
 #include <string>
+#include <iterator>
 
 class RadixTree
 {
 
 public:
-    class node {
-
+    struct node {
+        int value();
+        int minimalPrefix();
     };
 
-    class iterator {
-
-    public:
-        bool operator !=(const iterator& other) const;
-        void operator++();
-        node operator*();
-
+    struct iterator
+    {
+//        bool operator!=(const iterator& other) const;
+//        void operator++();
+//        node* operator->();
+//        node operator*();
     };
 
     RadixTree();
