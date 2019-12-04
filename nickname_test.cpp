@@ -2,11 +2,17 @@
 
 #include <boost/test/unit_test.hpp>
 
-#include "RadixTree.h"
-#include "iostream"
+//#include "RadixTree.h"
+//#include <iostream>
+//#include <algorithm>
+
 
 BOOST_AUTO_TEST_SUITE(nickname_test_suite)
 
+BOOST_AUTO_TEST_CASE( test_test ) {
+    BOOST_CHECK( 2 > 0);
+}
+/*
 BOOST_AUTO_TEST_CASE( worflow_test )
 {
     RadixTree radixTree;
@@ -17,14 +23,16 @@ BOOST_AUTO_TEST_CASE( worflow_test )
     radixTree.insert("alesha");
     radixTree.insert("maksim");
 
-    std::for_each( radixTree.begin(), radixTree.end(), []( const auto& item ){
-        std::cout << item->value() << item->minimalPrefix() << std::endl;
-    } );
-/*
-    std::for_each( radixTree.begin(), radixTree.end(), [](const RadixTree::& item){
-        std::cout << item->node() << std::endl;
-    });
-*/
-}
+    BOOST_CHECK( 2 > 3);
 
+    for( auto it = radixTree.begin(); it != radixTree.end(); ++it) {
+        std::cout << *it;
+    }
+
+//    std::for_each( radixTree.begin(), radixTree.end(), []( auto a ){
+//        std::cout << a;
+//    } );
+
+}
+*/
 BOOST_AUTO_TEST_SUITE_END()
