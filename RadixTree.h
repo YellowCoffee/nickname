@@ -4,16 +4,28 @@
 #include <string>
 #include <iostream>
 #include <iterator>
+#include <vector>
 
 class RadixTree
 {
 public:
     struct node {
-        char *label;
-        int is_end;
-        node* childs;
+        std::string m_label;
+        bool m_is_end;
+        std::vector<node*> m_childs;
+
+        // TODO: Need remove
+        node() = default;
+
+        node( const std::string& label );
+        void createChild(const std::string& label);
 
         friend std::ostream& operator<<(std::ostream& out, const node& node);
+
+    private:
+        bool moveChild(const std::string &firstSuffix);
+        const std::vector<node*>::const_iterator findChild(const std::string& label);
+        void processSuffix(const std::string& suffix);
     };
 
     struct iterator {
